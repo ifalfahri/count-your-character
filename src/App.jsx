@@ -128,7 +128,7 @@ export default function CharacterCounter() {
         href="https://github.com/yourusername"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 bg-slate-800 text-white text-xs font-bold py-2 px-2 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center justify-center"
+        className="fixed bottom-4 left-4 bg-slate-800 text-white text-xs font-bold py-2 px-2 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center justify-center"
       >
         <FaGithub size={20} className="mr-2" />
         GitHub
