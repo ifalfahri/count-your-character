@@ -24,12 +24,12 @@ export default function CharacterCounter() {
 
   const reverseText = () => {
     setText(text.split('').reverse().join(''))
-    showAlert('Text reversed!', 'bg-purple-400')
+    showAlert('Text reversed!', 'bg-indigo-400')
   }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text).then(() => {
-      showAlert('Copied to clipboard!', 'bg-red-400')
+      showAlert('Copied to clipboard!', 'bg-cyan-400')
     })
   }
 
@@ -74,7 +74,7 @@ export default function CharacterCounter() {
         </div>
         <button 
           onClick={() => setShowMoreFeatures(!showMoreFeatures)}
-          className="w-full bg-green-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center justify-center"
+          className="w-full bg-blue-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center justify-center"
         >
           {showMoreFeatures ? 'Hide' : 'More'} Features
           {showMoreFeatures ? <FaChevronUp className="ml-2" /> : <FaChevronDown className="ml-2" />}
@@ -87,7 +87,7 @@ export default function CharacterCounter() {
                   setText(text.toUpperCase())
                   showAlert('Text converted to uppercase!', 'bg-blue-400')
                 }} 
-                className="bg-blue-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+                className="bg-green-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Make Uppercase
               </button>
@@ -110,14 +110,14 @@ export default function CharacterCounter() {
               </button>
               <button 
                 onClick={reverseText} 
-                className="bg-purple-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+                className="bg-indigo-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Reverse Text
               </button>
             </div>
             <button 
               onClick={copyToClipboard} 
-              className="mt-4 w-full bg-red-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+              className="mt-4 w-full bg-cyan-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
             >
               Copy to Clipboard
             </button>
@@ -134,7 +134,7 @@ export default function CharacterCounter() {
         GitHub
       </a>
       {alert.show && (
-        <div className={`fixed top-4 left-1/2 transform -translate-x-1/2 ${alert.color} text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}>
+        <div className={`fixed top-8 left-1/2 transform -translate-x-1/2 ${alert.color} text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}>
           {alert.message}
         </div>
       )}
