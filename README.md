@@ -1,6 +1,8 @@
-# Count Your Character 📝
+# Count Your Character ![Favicon](public/CyC.svg) 
 
 A fun and interactive tool built with **React** and **Tailwind CSS**, designed to help you play around with text! This project experiments with neobrutalism design style for a unique and vibrant user interface.
+
+![Demo](https://res.cloudinary.com/dyjxcujz4/image/upload/v1731566802/demo_gkzuw8.gif)
 
 ## ✨ Features
 
@@ -22,15 +24,9 @@ A fun and interactive tool built with **React** and **Tailwind CSS**, designed t
 
 The UI is styled in **neobrutalism**, a design trend that emphasizes bold colors, heavy borders, and an intentionally “raw” look, giving the tool a playful, expressive feel.
 
-## 📸 Screenshots
-
-![Screenshot](screenshot.png)
-
-*Example screenshot showcasing the neobrutalist style and feature usage.*
-
 ## 🌐 Live Demo
 
-Check out the live demo here: [Count Your Character](https://ifalfahri.github.io/count-your-character)
+Check out the live demo here: [Count Your Character](https://countchar.vercel.app)
 
 ## 📝 License
 
