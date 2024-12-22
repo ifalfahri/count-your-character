@@ -30,7 +30,7 @@ The UI is styled in **neobrutalism**, a design trend that emphasizes bold colors
 
 ## 🌐 Live Demo
 
-Check out the live demo here: [Count Your Character](https://ifalfahri.github.io/count-your-character)
+Check out the live demo here: [Count Your Character](https://countchar.vercel.app)
 
 ## 📝 License
 
