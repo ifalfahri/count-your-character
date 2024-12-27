@@ -1,42 +1,42 @@
-import React, { useState, useEffect } from 'react'
-import { FaGithub, FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import React, { useEffect, useState } from "react";
+import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
 
 export default function CharacterCounter() {
-  const [text, setText] = useState('')
-  const [charCount, setCharCount] = useState(0)
-  const [wordCount, setWordCount] = useState(0)
-  const [showMoreFeatures, setShowMoreFeatures] = useState(false)
-  const [alert, setAlert] = useState({ show: false, message: '', color: '' })
+  const [text, setText] = useState("");
+  const [charCount, setCharCount] = useState(0);
+  const [wordCount, setWordCount] = useState(0);
+  const [showMoreFeatures, setShowMoreFeatures] = useState(false);
+  const [alert, setAlert] = useState({ show: false, message: "", color: "" });
 
   useEffect(() => {
-    setCharCount(text.length)
-    setWordCount(text.trim().split(/\s+/).filter(Boolean).length)
-  }, [text])
+    setCharCount(text.length);
+    setWordCount(text.trim().split(/\s+/).filter(Boolean).length);
+  }, [text]);
 
   const handleTextChange = (e) => {
-    setText(e.target.value)
-  }
+    setText(e.target.value);
+  };
 
   const removeExtraSpaces = () => {
-    setText(text.replace(/\s+/g, ' ').trim())
-    showAlert('Extra spaces removed!', 'bg-yellow-400')
-  }
+    setText(text.replace(/\s+/g, " ").trim());
+    showAlert("Extra spaces removed!", "bg-yellow-400");
+  };
 
   const reverseText = () => {
-    setText(text.split('').reverse().join(''))
-    showAlert('Text reversed!', 'bg-indigo-400')
-  }
+    setText(text.split("").reverse().join(""));
+    showAlert("Text reversed!", "bg-indigo-400");
+  };
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(text).then(() => {
-      showAlert('Copied to clipboard!', 'bg-cyan-400')
-    })
-  }
+      showAlert("Copied to clipboard!", "bg-cyan-400");
+    });
+  };
 
   const showAlert = (message, color) => {
-    setAlert({ show: true, message, color })
-    setTimeout(() => setAlert({ show: false, message: '', color: '' }), 2000)
-  }
+    setAlert({ show: true, message, color });
+    setTimeout(() => setAlert({ show: false, message: "", color: "" }), 2000);
+  };
 
   return (
     <div className="min-h-screen bg-yellow-300 flex items-center justify-center p-4 font-mono relative">
@@ -52,7 +52,11 @@ export default function CharacterCounter() {
             onChange={handleTextChange}
           ></textarea>
         </div>
-        <div className={`grid ${showMoreFeatures ? 'grid-cols-2' : 'grid-cols-1'} gap-4 mb-4 sm:mb-8`}>
+        <div
+          className={`grid ${
+            showMoreFeatures ? "grid-cols-2" : "grid-cols-1"
+          } gap-4 mb-4 sm:mb-8`}
+        >
           <div className="flex justify-center items-center bg-red-500 border-4 border-black p-4">
             <div className="text-3xl sm:text-5xl font-bold text-white mr-2 sm:mr-4">
               {charCount}
@@ -72,51 +76,55 @@ export default function CharacterCounter() {
             </div>
           )}
         </div>
-        <button 
+        <button
           onClick={() => setShowMoreFeatures(!showMoreFeatures)}
           className="w-full bg-blue-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)] flex items-center justify-center"
         >
-          {showMoreFeatures ? 'Hide' : 'More'} Features
-          {showMoreFeatures ? <FaChevronUp className="ml-2" /> : <FaChevronDown className="ml-2" />}
+          {showMoreFeatures ? "Hide" : "More"} Features
+          {showMoreFeatures ? (
+            <FaChevronUp className="ml-2" />
+          ) : (
+            <FaChevronDown className="ml-2" />
+          )}
         </button>
         {showMoreFeatures && (
           <div className="mt-4 sm:mt-8">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-              <button 
+              <button
                 onClick={() => {
-                  setText(text.toUpperCase())
-                  showAlert('Text converted to uppercase!', 'bg-blue-400')
-                }} 
+                  setText(text.toUpperCase());
+                  showAlert("Text converted to uppercase!", "bg-blue-400");
+                }}
                 className="bg-green-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Make Uppercase
               </button>
-              <button 
+              <button
                 onClick={() => {
-                  setText(text.toLowerCase())
-                  showAlert('Text converted to lowercase!', 'bg-pink-400')
-                }} 
+                  setText(text.toLowerCase());
+                  showAlert("Text converted to lowercase!", "bg-pink-400");
+                }}
                 className="bg-pink-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Make Lowercase
               </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <button 
-                onClick={removeExtraSpaces} 
+              <button
+                onClick={removeExtraSpaces}
                 className="bg-yellow-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Remove Extra Spaces
               </button>
-              <button 
-                onClick={reverseText} 
+              <button
+                onClick={reverseText}
                 className="bg-indigo-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
               >
                 Reverse Text
               </button>
             </div>
-            <button 
-              onClick={copyToClipboard} 
+            <button
+              onClick={copyToClipboard}
               className="mt-4 w-full bg-cyan-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
             >
               Copy to Clipboard
@@ -134,10 +142,12 @@ export default function CharacterCounter() {
         GitHub
       </a>
       {alert.show && (
-        <div className={`fixed top-8 left-1/2 transform -translate-x-1/2 ${alert.color} text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}>
+        <div
+          className={`fixed top-8 left-1/2 transform -translate-x-1/2 ${alert.color} text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)]`}
+        >
           {alert.message}
         </div>
       )}
     </div>
-  )
+  );
 }
