@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { FaChevronDown, FaChevronUp, FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { FaChevronDown, FaChevronUp, FaGithub, FaClipboard } from "react-icons/fa";
 
 export default function CharacterCounter() {
   const [text, setText] = useState("");
@@ -46,11 +46,15 @@ export default function CharacterCounter() {
         </h1>
         <div className="relative mb-4 sm:mb-8">
           <textarea
-            className="w-full h-40 sm:h-64 px-4 py-3 text-lg sm:text-xl text-black bg-blue-200 border-4 border-black rounded-none resize-none focus:outline-none focus:ring-4 focus:ring-blue-500 transition duration-200"
+            className="w-full h-40 sm:h-64 px-4 py-3 pr-12 text-lg sm:text-xl text-black bg-blue-200 border-4 border-black rounded-none resize-none focus:outline-none focus:ring-4 focus:ring-blue-500 transition duration-200"
             placeholder="Type or paste your text here..."
             value={text}
             onChange={handleTextChange}
           ></textarea>
+          <button
+            onClick={copyToClipboard}
+            className="absolute top-3 right-4 bg-white text-black p-2 border-4 border-black transition duration-200 hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
+          ><FaClipboard size={20} /></button>
         </div>
         <div
           className={`grid ${
