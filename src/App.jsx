@@ -127,12 +127,6 @@ export default function CharacterCounter() {
                 Reverse Text
               </button>
             </div>
-            <button
-              onClick={copyToClipboard}
-              className="mt-4 w-full bg-cyan-400 text-black text-lg sm:text-xl font-bold py-2 sm:py-3 px-4 sm:px-6 border-4 border-black transition duration-200 uppercase hover:translate-x-[4px] hover:translate-y-[4px] hover:shadow-none shadow-[4px_4px_0_0_rgba(0,0,0,1)]"
-            >
-              Copy to Clipboard
-            </button>
           </div>
         )}
       </div>
